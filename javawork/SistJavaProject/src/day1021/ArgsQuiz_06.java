@@ -19,8 +19,8 @@ public class ArgsQuiz_06 {
 		String name=args[0];
 		System.out.println(args[1]+args[2]+args[3]);
 		
-		int kor=Integer.parseInt(args[1]);
-		int mat=Integer.parseInt(args[2]);
+		int kor=Integer.parseInt(args[1]); //문자열을 정수로 변환
+		int mat=Integer.parseInt(args[2]); 
 		int eng=Integer.parseInt(args[3]);
 		
 		//계산
