@@ -30,7 +30,7 @@ public class Quiz_01 {
         System.out.print("입고된 수량은? ");
         amount = sc.nextInt();
 
-        System.out.print("단가는? ");
+        System.out.print("단가는? "  );
         price = sc.nextInt();
 
         // 계산
@@ -40,7 +40,8 @@ public class Quiz_01 {
         System.out.println(name + " " + amount + "개는 총 " + total + "원입니다.");
 
         if (amount >= 5) {
-            dc = total * 0.1;
+            //dc = total * 0.1;
+        	dc = total * 9/10;
             finalPrice = total - dc;
             System.out.println("5개 이상은 10% DC됨");
             System.out.println("할인된 총 금액: " + (int)finalPrice + "원");
