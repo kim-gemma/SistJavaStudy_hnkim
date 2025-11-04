@@ -1,3 +1,4 @@
+
 package day1031;
 
 public class Ex2Main {
