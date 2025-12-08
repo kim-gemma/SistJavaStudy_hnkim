@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #myimg1{
+        width: 200px;
+        height: 300px;
+        border: 5px double pink;
+       }
+
+       #myimg2{
+        position: relative;  /*상대좌표*/
+        left: 100px;
+        top: 200px;
+        width:300px;
+       }
+       #myimg3{
+        position: absolute;
+        left: 800px;
+        top: 150px;
+       }
+
+       #myimg4{
+        width: 300px;
+        height: 250px;
+        background-image: url("../image/Food/1.jpg");
+        background-repeat: no-repeat;
+       }
+
+       /* 마우스 클릭시 이미지 변경 */
+      /* #myimg4:active{
+        background-image: url("../image/Food/11.jpg");
+       }*/
+
+       /* 마우스 오버시 이미지 변경 */
+       #myimg4:hover{
+        background-image: url("../image/연예인사진/10.jpg");
+        background-size: 150px 150px;
+       }
+
+    </style>
+</head>
+<body>
+    <img src="../image/만화이미지/05.png" alt="철수없음" title="철수"  id="myimg1">
+    <img src="../image/logoImg/icon05.png" alt="하트없음" title="하트" id="myimg2">
+    <img src="../image/flower_ani/f6.png" alt="꽃다발없음" title="꽃다발" id="myimg3">
+    <img src="" alt="" id="myimg4">
+</body>
+</html>

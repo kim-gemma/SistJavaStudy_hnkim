@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 2px solid gray;
+            border-collapse: collapse;  /*칸과 칸사이 여백없애기*/
+        }
+        tr,th,td{
+            border: 1px solid purple;
+        }
+
+        /* 마우스 속성 */
+        tr td:active{
+            background-color: blueviolet;
+            color: white;
+        }
+
+        /* 제목 hover */
+        tr th:hover{
+            background-color: aqua;
+            color: aliceblue;
+        }
+
+
+        .tb2 tr td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+       <tr>  <!--tr은 하나의 행-->
+         <th width="100">이름</th>   <!--th는 제목-->
+         <th width="150">학교</th>
+         <th width="150">학과</th>
+         <th width="250">주소</th>
+       </tr> 
+       <tr>
+          <td>이승기</td>  <!--td는 내용-->
+          <td>서울대학교</td>
+          <td>컴퓨터공학과</td>
+          <td>경기도 이천시</td>
+       </tr>
+       <tr>
+          <td>유민상</td>  <!--td는 내용-->
+          <td>서원대학교</td>
+          <td>경영학과</td>
+          <td>경기도 여주시</td>
+       </tr>
+       <tr>
+          <td>유재석</td>  <!--td는 내용-->
+          <td>김천대학교</td>
+          <td>유아교육과</td>
+          <td>경기도 용인시</td>
+       </tr>
+       <tr align="center" height="50">
+         <td colspan="4">
+            4칸 합체
+         </td>
+       </tr>
+    </table>
+
+   <hr>
+
+   <table class="tb2">
+    <caption><b>[표2]</b></caption>
+    <tr height="50">
+        <th width="150">사진</th>
+        <th width="150">메뉴명</th>
+        <th width="200">가격</th>
+    </tr>
+    <tr>
+        <td rowspan="4">
+            <img src="../image/Food/1.jpg" alt="" width="80">
+        </td>
+        <td>에그샌드위치</td>
+        <td>8000원</td>
+    </tr>
+    <tr>
+        <td>아보카도 샌드위치</td>
+        <td>15000원</td>
+    </tr>
+    <tr>
+        <td>클럽 샌드위치</td>
+        <td>12000원</td>
+    </tr>
+    <tr>
+        <td>오이 샌드위치</td>
+        <td>5000원</td>
+    </tr>
+   </table>
+
+   <hr>
+
+   <table width="500">
+      <caption><b>[표3_병합연습]</b></caption>
+      <tr height="40" align="center">
+         <td rowspan="3" >1</td>
+         <td colspan="3">2</td>
+      </tr>
+      <tr height="40" align="center">
+        <td colspan="2">3</td>
+        <td rowspan="3">4</td>
+      </tr>
+       <tr height="40" align="center">
+        <td>5</td>
+        <td>6</td>
+       </tr>
+       <tr height="40" align="center">
+        <td colspan="2">7</td>
+        <td>8</td>
+       </tr>
+
+   </table>
+
+    <hr>
+
+   <table class="tb4">
+      <caption><h2>테이블예제_4</h2></caption>
+      <thead>
+        <tr>
+            <th width="120">그룹명</th>
+            <th width="120">사진</th>
+            <th width="250">그룹정보</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td rowspan="3">bts</td>
+            <td rowspan="3">
+                <img src="../image/연예인사진/bts.png" width="150" height="150">
+            </td>
+            <td>소속사: 하이브</td>
+        </tr>
+        <tr>
+            <td>팬이름: 아미</td>
+        </tr>
+        <tr>
+            <td>대표곡: 버터</td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="3">뉴진스</td>
+            <td rowspan="3">
+                <img src="../image/연예인사진/newjins.png" width="150" height="150">
+            </td>
+            <td>소속사: 어도어</td>
+        </tr>
+        <tr>
+            <td>팬이름: 진스</td>
+        </tr>
+        <tr>
+            <td>대표곡: **</td>
+        </tr>
+      </tbody>
+
+   </table>
+</body>
+</html>

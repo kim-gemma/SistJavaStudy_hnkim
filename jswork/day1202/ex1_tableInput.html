@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 400px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid gray;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+            //버튼이벤트
+            document.getElementById("btnresult").onclick=function(){
+
+                //이름
+                var name=document.getElementById("name").value;
+
+                if(name.length==0){
+                    alert("이름을 입력해주세요");
+                    return;
+                }
+
+                //자바점수
+                var java=document.getElementById("java").value;
+
+                if(java.length==0){
+                    alert("java 점수를 입력해주세요");
+                    return;
+                }
+
+                if(isNaN(java)){
+                    alert("숫자로만 입력해주세요");
+                    return;
+                }
+
+                //js점수
+                var js=document.getElementById("js").value;
+
+                //합계
+                var sum=eval(java+"+"+js); //문자형태의 수식을 계산
+                var avg=sum/2;
+
+                //운전면허 체크박스의 값 읽기
+                var driver=document.getElementById("driver").value;
+                //alert(driver);
+
+                var chkdriver=document.getElementById("driver");
+                //alert(chkdriver.checked);
+
+
+                var s="[결과확인]<br>";
+                s+="이름: "+name+"<br>";
+                s+="자바점수: "+java+"<br>";
+                s+="자바스크립트점수: "+js+"<br>";
+                s+="합계: "+sum+"<br>";
+                s+="평균: "+avg+"<br>";
+                s+="운전면허: "+(chkdriver.checked?"있음":"없음")+"<br>";
+
+
+                document.getElementById("out").innerHTML=s;
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption><h3>폼태그 Quiz</h3></caption>
+        <tr>
+            <th>이름</th>
+            <td>
+                <input type="text" id="name" size="6">
+            </td>
+        </tr>
+        <tr>
+            <th>자바점수</th>
+            <td>
+                <input type="text" id="java" size="6">
+            </td>
+        </tr>
+        <tr>
+            <th>자바스크립트점수</th>
+            <td>
+                <input type="text" id="js" size="6">
+            </td>
+        </tr>
+        <tr>
+            <th>운전면허</th>
+            <td>
+                <input type="checkbox" id="driver" value="ok">있음
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" id="btnresult">결과확인</button>
+            </td>
+        </tr>
+
+        <tr height="150">
+            <td colspan="2" align="center">
+                <div id="out">결과출력(이름,자바,js점수,총점,평균,운전면허: 있음,없음으로 표시할것!!!)</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

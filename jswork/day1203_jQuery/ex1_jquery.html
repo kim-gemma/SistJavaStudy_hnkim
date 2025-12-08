@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>jquery</title>
+    <script>
+        //jquery  사용시 window,onload-function()와 같은기능 #1. 거의사용안함
+        // $(document).ready(function(){
+                //alert("처음로딩시 호출");
+        // });
+        //jquery  사용시 window,onload-function()와 같은기능 #2
+        $(function(){
+            //1.css스타일변경
+            $("#good").css("color","red");
+        });
+    </script>
+</head>
+<body>
+    <h2 id="good">h2Tag id</h2>
+    <h3 class="good2">h3 class</h3>
+    <div class="'hello">
+        div class hello
+        <div>hello 바로아래 div</div>
+
+    </div>
+    <div class="sist">
+        <b>div class sist 아래 b</b><br>
+        <span>div class sist 아래 span</span><br>
+        <img src="../image/jquery_img/01.png" alt=""><br>
+    </div>
+    <div class="hello">
+          hello div2
+        <img src="../image/flower_ani/f13.png" alt=""><br>
+        <div>hello 바로아래 div
+             <img src="../image/flower_ani/f14.png" alt="">
+        </div>
+    </div>
+    <b>태그 단독 #1</b> <b>태그 단독 #2</b> <b>태그 단독 #3</b>
+</body>
+</html>

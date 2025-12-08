@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: absolute;
+            left: 200px;
+            top: 50px;
+        }
+
+        .container div img{
+            border: 10px inset purple;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+          
+          window.onload=function(){
+
+            var selimg=document.getElementById("selImage");
+            var foodPhoto=document.getElementById("mainFood");
+
+            //초기이미지 매칭이 안된것 해결
+           var init_img =selimg.value;
+          // alert(init_img);
+           //현재사진이랑 매칭
+           foodPhoto.setAttribute("src",init_img);
+
+
+
+            //select이벤트
+            selimg.onchange=function(){
+
+                //모든 이벤트 함수에는 이벤트 발생객체에 this라는 변수가 기본으로 존재한다
+                console.log(this.value);
+
+
+                foodPhoto.setAttribute("src",this.value);
+            }
+          }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button type="button" id="btnSmall">점점작게</button>
+            <button type="button" id="btnLarge">점점크게</button>
+
+            <b>사진선택</b>
+            <select name="" id="selImage">
+                <option value="../image/Food/1.jpg">에그샌드위치</option>
+                <option value="../image/Food/7.jpg" selected>토마토비프</option>
+                <option value="../image/Food/9.jpg">연근조림</option>
+                <option value="../image/Food/10.jpg">스펨에그덮밥</option>
+            </select>
+        </div>
+
+         <div>
+            <img src="../image/Food/12.jpg" alt="" id="mainFood" width="300">
+         </div>
+
+
+
+    </div>
+</body>
+</html>

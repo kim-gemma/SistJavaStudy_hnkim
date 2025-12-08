@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css영역   class: . , id: # */
+        .happy{  /*모든 happy라는 클래스*/
+            color: blueviolet;
+            font-size: 30pt;
+        }
+
+        b.nice{ /*b태그에서만 적용*/
+            text-decoration: underline;
+            color: black;
+        }
+
+        /* image 공통 */
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+        }
+
+        /* imga */
+        img.imga{
+            border: 10px inset gray;
+            margin-bottom: 50px;
+        }
+
+         /* imgb */
+         img.imgb{
+            box-shadow: 10px 10px 10px gray;
+         }
+
+
+         /* fimg안의 이미지 가로정렬   >:바로아래(자식)  한칸뗌: 하위(자손)*/
+         div.fimg>figure{
+            float: left;
+         }
+
+         /* div.fimg>figure>figcaption>b */
+         div.fimg b{
+            margin-left: 60px;
+         }
+
+
+         div.simg{
+            width: 1000px;
+            height: 300px;
+            border: 2px solid gray;
+         }
+
+        div.simg{
+            
+            display: flex;
+            flex-direction: row;
+            /*row:가로방향(왼쪽정렬)  row-reverse:거꾸로정렬(우측방향)  column:세로방향*/
+        }
+
+        div.simg img{
+
+            border: 2px solid green;
+            box-shadow: 10px 10px 10px gray;
+            border-radius: 20px 50px 80px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <font size="5" color="red">Font Tag!!!</font><br>
+    <span style="color: brown; font-size: 2em;">SpanTag!!!</span><br>
+    <span style="border: 3px solid green; ">안녕하세요</span>
+    <div class="happy">Div Tag#1</div>
+    <div class="happy nice">Div Tag#2</div>
+    <b class="happy nice">B tag!!!굵게속성포함태그</b>
+    <br>
+    <img src="../image/연예인사진/12.jpg" alt="보영님 없음" title="나는 박보영"
+    class="imga">
+    <br>
+    <img src="../image/Food/12.jpg" alt="순두부라면없음" title="순두부라면"
+    class="imgb">
+
+
+    <hr>
+    <div class="fimg">
+        <figure>
+            <img src="../image/Food/1.jpg">
+            <figcaption><b>에그 샌드위치</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../image/Food/11.jpg">
+            <figcaption><b>망고빙수</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../image/Food/12.jpg">
+            <figcaption><b>순두부 해장라면</b></figcaption>
+        </figure>
+    </div>
+
+    <hr style="clear: both;">
+
+
+    <div class="simg">
+        <figure>
+            <img src="../image/연예인사진/4.jpg">
+            <figcaption><b>박서준</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../image/연예인사진/11.jpg">
+            <figcaption><b>고준희</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../image/연예인사진/12.jpg">
+            <figcaption><b>박보영</b></figcaption>
+        </figure>
+    </div>
+
+
+   
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //암시적형변환: 자바스크립트 컴파일러에 의해서 자동으로 일어나는 형변환
+       var result=1 + "2";
+       document.write("result="+result+"<br>"); //12
+
+       var result2="2"+true;
+       document.write("result2="+result2+"<br>");//2true
+
+       //명시적형변환  String==>int  parseInt,Number
+       var test1="300";
+       //document.write(parseInt(test1)+10+"<br>"); //310
+       document.write(Number(test1)+10+"<br>");
+
+       var test2="300.2";
+       document.write(parseInt(test2)+10+"<br>"); //310
+
+       document.write(parseFloat(test2)+10+"<br>"); //310.2
+
+       //eval  : 문자열안의 연산 가능
+       var test3=eval("20.5+5");
+       document.write(test3+"<br>");
+       document.write(parseFloat(test3)+parseInt(test3)); //50.5
+       
+
+    </script>
+</body>
+</html>

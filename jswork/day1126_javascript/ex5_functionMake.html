@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("안녕하세요 주현님 자바스크립트 재밌죠?<br>");
+        document.write("안녕하세요 현주님 자바스크립트 재밌죠?<br>");
+        document.write("안녕하세요 민영님 자바스크립트 재밌죠?<br>");
+    //중복되는 부분을 함수로 포장한후
+    //중복되지 않는부분을 파라메타로 만든후 함수를 호출할때 값을 넘긴다
+
+    function showName(name){
+        document.write("안녕하세요 "+name+"님 자바스크립트 재밌죠?<br>");
+    }
+    showName("주현");
+    showName("현주");
+    showName("민영");
+
+    document.write("================================<br>");
+    //Q. 함수만들기
+
+    // 안녕하세요
+    //주현님의 나이는 26세 입니다
+
+    //안녕하세요
+    //현주님의 나이는 28세 입니다
+    function showInfo(name,age){
+        document.write("안녕하세요?<br>"+name+"님의 나이는 "+age+"세입니다<br>");
+    }
+
+    showInfo("주현",26);
+    showInfo("현주",28);
+
+    document.write("================================<br>");
+    document.write("리터럴 방식 함수만들기<br>");
+    //이름: 주현
+    //키: 165cm
+    //몸무게:60kg
+    //여러분의 이름,키,몸무게를 파라메타로 받아 출력하는 함수를 만들어보자
+
+    var showMyInfo=function(name,height,weight){
+        document.write("이름: "+name+"<br>");
+        document.write("키: "+height+"Cm<br>");
+        document.write("몸무게: "+weight+"Kg<br>");
+    }
+
+    showMyInfo("현빈",165,65);
+
+    </script>
+</body>
+</html>

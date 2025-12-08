@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 500px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 2px solid gray;
+            margin-top: 20px;
+            background: url("../image/만화이미지/04.png") no-repeat right bottom;
+            background-size: 50px 60px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+            //div요소값
+            var r=document.getElementById("result");
+            //ima요소값
+            var rimag=document.getElementById("imgResult");
+
+            //버튼1이벤트..innerHTML,innerText
+            //1번 버튼누르면 당신의 이름? 그결과를 result에 출력
+            document.getElementById("btn1").onclick=function(){
+
+                var name=prompt("당신의 이름은?");
+                if(name==null)
+                r.innerText="<u>취소눌렀네요~~~</u>";  //태그가 그대로 출력
+                else
+                r.innerHTML="<u>당신의 이름은 "+name+"이네요~~~</u>"; //태그가 적용
+            }
+
+
+            //버튼2 이벤트
+            //이미지의 너비를 입력해서 해당너비로 변경되게,취소시 이미지변경하지 않겠다
+            document.getElementById("btn2").onclick=function(){
+
+                //현재width
+                var curWidth=rimag.getAttribute("width");
+                alert(curWidth);
+               var new_width= prompt("이미지의 원하는 너비를 입력해주세요",curWidth);
+
+               if(new_width==null)
+                 r.innerHTML="<h3>변경안함</h3>";
+                else
+                rimag.setAttribute("width",new_width);
+            }
+
+            //3번 버튼 누르면 (Food이미지의 1~12.jpg or 연예인 이미지의 1~20.jpg 활용할것)
+            //출력할 음식 번호(연예인이름)를 입력하시오;
+            //취소누르면 현재사진을 변경하지 않겠어요 
+            //확인 누르면 해당사진으로 사진 변경
+            //사진의 범위를 넘어서면 함수종료
+            document.getElementById("btn3").onclick=function(){
+               var fooNum =prompt("원하는 음식사진을 입력하세요",1);
+
+               if(fooNum==null)
+                 alert("현재사진을 변경안할래요~~");
+               if(fooNum<1 || fooNum>12){
+                alert("1~12 사이값만 입력하세요");
+                return; //함수종료
+               }
+              
+               //경로구하기
+               var imgSrc="../image/Food/"+fooNum+".jpg";
+               //이미지 변경
+               rimag.setAttribute("src",imgSrc);
+
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button type="button" class="btn1 btn-black" id="btn1">이벤트#1</button>
+    <button type="button" class="btn1 btn-pink" id="btn2">이벤트#2</button>
+    <button type="button" class="btn1 btn-green" id="btn3">이벤트#3</button>
+    <div id="result"></div>
+    <img src="../image/logoImg/acc03.png" alt="" id="imgResult" width="300">
+</body>
+</html>

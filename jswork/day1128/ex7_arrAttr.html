@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        #img_gallery img {
+            width: 120px;
+            height: 100px;
+        }
+        #img_gallery{
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            cursor: pointer;
+        }
+        #result_div{
+            position: absolute;
+            left: 500px;
+            top: 300px;
+           
+        }
+        #img_result{
+            border: 10px solid gray;
+            width: 500px;
+            height: 450px;
+        }
+    </style>
+</head>
+<script>
+    window.onload=function(){
+        var img=[
+            document.getElementById("img1"),
+            document.getElementById("img2"),
+            document.getElementById("img3"),
+            document.getElementById("img4"),
+        ];
+        var result=document.getElementById("img_result");
+        for(var i=0; i<img.length; i++){
+            img[i].onclick=function(){
+                result.src=this.src;
+            }
+        }
+    }
+</script>
+<body>
+      <div id="img_gallery">
+        <img src="../image/연예인사진/1.jpg" alt="" id="img1" class="thumb">
+        <img src="../image/연예인사진/2.jpg" alt="" id="img2" class="thumb">
+        <img src="../image/연예인사진/6.jpg" alt="" id="img3" class="thumb">
+        <img src="../image/연예인사진/12.jpg" alt="" id="img4" class="thumb">
+    </div>
+
+    <div id="result_div">
+        <img src="" alt="" id="img_result">
+    </div>
+</body>
+</html>

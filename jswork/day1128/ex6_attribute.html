@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img_gallery img {
+            width: 120px;
+            height: 100px;
+        }
+        #img_gallery{
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            cursor: pointer;
+        }
+        #result_div{
+            position: absolute;
+            left: 500px;
+            top: 300px;
+           
+        }
+        #img_result{
+            border: 10px solid gray;
+            width: 500px;
+            height: 450px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var img1=document.getElementById("img1");
+            var img2=document.getElementById("img2");
+            var img3=document.getElementById("img3");
+            var img4=document.getElementById("img4");
+            var result=document.getElementById("img_result");
+
+            //이벤트를 주는데 속성
+            img1.onclick= function(){
+                
+                // imgresult 에 각각의 1번에서 가지고온 이미지를 넣어주면 된다 
+                result.setAttribute("src",img1.getAttribute("src"));
+            }
+        }
+
+        window.onload=function(){
+            const imgs=document.querySelectorAll(".thumb")
+            //imgs = [img1요소, img2요소, img3요소, img4요소]
+            //imgs는 배열 비슷한 형태(NodeList)야. 예를 들면 이런 느낌:
+            //forEach는 “배열에 있는 요소 하나씩 꺼내서 함수 실행”하는 메서드
+            const result = document.getElementById("img_result");
+
+            imgs.forEach(imgs => {
+                imgs.onclick=function(){
+                    result.src=this.src;
+                   // 여기 안에서 this === img
+                }
+            });
+        }
+
+
+        
+    </script>
+</head>
+<body>
+    <!-- 속성: src, width, border -->
+    <div id="img_gallery">
+        <img src="../image/Food/1.jpg" alt="" id="img1" class="thumb">
+        <img src="../image/Food/2.jpg" alt="" id="img2" class="thumb">
+        <img src="../image/Food/6.jpg" alt="" id="img3" class="thumb">
+        <img src="../image/Food/12.jpg" alt="" id="img4" class="thumb">
+    </div>
+
+    <div id="result_div">
+        <img src="" alt="" id="img_result">
+    </div>
+</body>
+</html>

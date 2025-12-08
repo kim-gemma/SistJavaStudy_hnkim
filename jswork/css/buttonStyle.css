@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&family=Nanum+Myeongjo&family=Nanum+Pen+Script&display=swap');
+
+
+.btn1{
+    width: 130px;
+    height: 35px;
+    font-size: 25px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
+    font-family: 'Gamja Flower';
+}
+
+.btn-pink{
+    background-color: pink;
+    color: black;
+}
+.btn-green{
+    background-color: green;
+    color: white;
+}
+.btn-black{
+    background-color: black;
+    color: magenta;
+}

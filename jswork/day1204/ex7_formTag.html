@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid gray;
+            padding: 20PX;
+            width: 500PX;
+            margin-bottom: 10PX;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>폼태그 연습#1</h3>
+    <div>
+        <b>아이디</b>
+        <input type="text" name="" id="" style="width: 120px;">
+        <br>
+        <b>패스워드</b>
+        <input type="password" style="width: 120px;">
+        <br>
+    </div>
+    <script>
+        //포커스가 갈경우에 분홍색 
+        //jQuery에서 this는 어떻게 쓰나?
+        //순수 JS에서는 → this 자체가 DOM 요소
+        //jQuery에서 사용하려면 → $(this) 로 감싸서 jQuery 객체로 변환
+        //이벤트가 발생한 주체 = this
+        $("input:text, input:password").focus(function(){
+            $(this).css("background-color","pink");
+        });
+            $("input:text, input:password").blur(function(){
+            $(this).css("background-color","white");
+        });
+    </script>
+    <!-- <script>
+        //JavaScript에서도 this = 이벤트가 발생한 요소 자신  ==jQuery와 동일한 개념이야.
+        여기서 e.target = this와 같은 의미 (이벤트 주체).
+         // 모든 text, password input 선택
+        const inputs = document.querySelectorAll("input[type='text'], inout[type='password']");
+        inputs.forEach(input =>{
+            // 포커스 들어왔을 때
+            input.addEventListener("focus", function(e){
+                this.style.backgroundColor = "pink";
+                e.target.style.backgroundColor = "pink";
+            });
+
+            // 포커스 나갈 때
+            input.addEventListener("blur", function(e){
+                this.style.backgroundColor = "white";
+                e.target.style.backgroundColor = "white";
+            });
+        })
+
+    </script> -->
+
+    <h3>폼태그 연습#2</h3>
+    <div>
+        <input type="checkbox"  id="chklic">운전면허&nbsp;&nbsp;
+        <button type="button" id="btn1">확인</button>&nbsp;&nbsp;
+        <span></span>
+    </div>
+    <script>
+        $("#btn1").click(function(){
+            // 체크박스의 value 값을 가져옴
+            // value 속성을 지정하지 않으면 기본값 "on" 이 반환된다.
+            var a= $("#chklic").val();
+            // 체크박스가 체크되어 있으면 true, 아니면 false 반환
+            var b= $("#chklic").is(":checked"); 
+                // 첫 번째 span에 "value값, 체크여부" 출력 
+            $("span:eq(0)").html(a+","+b);
+        })
+    </script>
+
+    <h3>폼태그연습 #3</h3>
+    <div>
+        <b>당신이 사는 지역?</b>
+        <!-- 라디오 버튼은 같은 그룹으로 만들기 위해 name을 동일하게 설정해야 함 -->
+        <input type="radio" name="city" value="서울시" checked> 서울시&nbsp; 
+        <input type="radio" name="city" value="경기도"> 경기도&nbsp; 
+        <input type="radio" name="city" value="세종시"> 세종시&nbsp; 
+        <input type="radio" name="city" value="대구시"> 대구시&nbsp; 
+        <input type="radio" name="city" value="제주시"> 제주시&nbsp; 
+        <input type="radio" name="city" value="부산시"> 부산시&nbsp; 
+        <button id="btncity">확인</button>
+        <span></span>
+        <script>
+            $("#btncity").click(function(){
+                var cityData= $("input[name='city']:checked").val();
+                $("span:eq(1)").html(cityData);
+            });
+        </script>
+    </div>
+
+    <h3>폼태그연습 #4</h3>
+    <div>
+        <b>당신이 가본 나라는?</b>
+        <input type="checkbox" name="nara" value="미국">미국&nbsp;
+        <input type="checkbox" name="nara" value="호주">호주&nbsp;
+        <input type="checkbox" name="nara" value="캐나다">캐나다&nbsp;
+        <input type="checkbox" name="nara" value="영국">영국&nbsp;
+        <input type="checkbox" name="nara" value="런던">런던&nbsp;
+        <button id="naracity">확인</button>
+        <span></span>
+    </div>
+  
+    <script>
+        $("#naracity").click(function(){
+            var naraData= $("input[name='nara']:checked").length;
+
+            var s= "체크된 갯수:"+naraData;
+            if(naraData==0){
+                s+="가본 나라가 없네요~~"
+            } else {
+               $("input[name='nara']:checked").each(function(i, element){
+                    s += $(this).val() + "&nbsp;";
+                });
+            }
+
+            $("span:eq(2)").html(s);
+        });
+    </script>
+
+    <h3>폼태그연습 #5</h3>
+    <div>
+        <!-- 폼태그에는 name 필요 -->
+        <select name="" id="selone">
+            <option value="빨강">빨강</option>
+            <option value="초록">초록</option>
+            <option value="보라색">보라색</option>
+            <option value="노랑">노랑</option>
+        </select>
+         <button type="button" id="btnCol">확인</button>
+        <span></span>
+    </div>
+    <script>
+        $("#btnCol").click(function(){
+            // 선택된 option의 화면에 보이는 텍스트를 가져옴
+            // (option:selected 를 쓰지 않으면 모든 option의 텍스트를 가져오게 됨)
+           var text = $("#selone option:selected").text();
+           var colVal = $("#selone").val();
+
+            
+
+           $("span:eq(3)").html(text+colVal);
+        });
+    </script>
+</html>

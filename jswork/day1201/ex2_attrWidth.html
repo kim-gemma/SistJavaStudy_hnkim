@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            margin-bottom: 50px;
+            margin-left: 50px;
+        }
+    </style>
+    <script>
+        function photoSmall(){
+            var mina=document.getElementById("mina");
+            var w = mina.getAttribute("width");
+
+            console.log(typeof(w));  //string타입이더라도 -,*는 숫자로 계산이됨(+만안됨)
+            //w=parseInt(w); -는 계산이되므로 생략가능
+            w-=10;
+            mina.setAttribute("width",w);
+        }
+
+        function photoLarge(){
+            var mina=document.getElementById("mina");
+            var w = mina.getAttribute("width");
+
+            console.log(typeof(w));  //string타입이더라도 -,*는 숫자로 계산이됨(+만안됨)
+            w=parseInt(w);  //width속성을 int로 형변환후 다시 w
+
+            w+=10;
+            mina.setAttribute("width",w);
+        }
+    </script>
+
+
+</head>
+<body>
+    <div id="one">
+        <button type="button" onclick="photoSmall()">점점작게</button>
+        <button type="button" onclick="photoLarge()">점점크게</button>
+    </div>
+
+    <img src="../image/연예인사진/17.jpg" width="200" id="mina">
+    <hr>
+
+    <h3>배열로 이미지를 5개 생성해보시고 그 이미지를 출력해 보자</h3>
+    <script>
+       var arrImg=[
+        "../image/Food/1.jpg",
+        "../image/Food/2.jpg",
+        "../image/Food/10.jpg",
+        "../image/Food/11.jpg",
+        "../image/Food/7.jpg"
+       ];
+
+       var s="";
+       for(var i=0;i<arrImg.length;i++){
+          s+="<img src='"+arrImg[i]+"' width='100'>";
+       }
+
+       document.write(s);
+    </script>
+    
+</body>
+</html>

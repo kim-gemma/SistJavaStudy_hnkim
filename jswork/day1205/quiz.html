@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .a{color: blueviolet;}
+        .b{color: blue;}
+        .c{color: brown;}
+
+        div.subject>b{
+            font-size: 25pt;
+            cursor: pointer;
+        }
+
+        div.answer>h5{
+            text-indent: 30px; /*들여쓰기*/
+        }
+    </style>
+    <script>
+        $(function(){
+
+              //모든댓글 숨기기
+              $("div.answer").hide();
+
+              //제목을 클릭하면 그내용에 관한 댓글만 보이고 
+              //나머지글에 대한 댓글은 안보이게 처리하시오
+              $("div.subject>b").click(function(){
+                $(this).next().show('fast');
+
+                //클릭한 곳의 부모(div.subject)의 형제들(siblings)
+                //그형제들에서 answer를 찾아서 숨기기
+                $(this).parent().siblings().find("div.answer").hide();
+              });
+        });
+    </script>
+</head>
+<body>
+    <div class="subject a">
+        <b>오늘은 즐거운 금요일입니다</b>
+        <div class="answer">
+            <h5>그러게요~즐겁게 보내세요</h5>
+            <h5>저는 오늘 야근입니다 ㅜㅜ</h5>
+            <h5>오늘 워크샵 왔어요</h5>
+        </div>
+    </div>
+    <div class="subject b">
+        <b>제이쿼리 3일차끝~~</b>
+        <div class="answer">
+            <h5>제이커리 재밌죠?</h5>
+            <h5>저는 어렵던데~~~</h5>
+            <h5>자바스크립트 하다가 하니 쉬운데요?</h5>
+        </div>
+    </div>
+    <div class="subject c">
+        <b>오늘 내 생일 파티하니까 모이자</b>
+        <div class="answer">
+            <h5>쏘리~~난 약속이 있어서</h5>
+            <h5>맛있는거 쏘니?</h5>
+            <h5>아무거나 입고가도 돼지?</h5>
+            <h5>내가 케잌 사갈게~~</h5>
+        </div>
+    </div>
+</body>
+</html>

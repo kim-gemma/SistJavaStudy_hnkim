@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+                //배열에 이미지 5개 넣기
+                //arr[0],push("../image/"),["",""]
+                var imgArr=new Array();
+                imgArr.push("../image/연예인사진/1.jpg");
+                imgArr.push("../image/연예인사진/11.jpg");
+                imgArr.push("../image/연예인사진/7.jpg");
+                imgArr.push("../image/연예인사진/8.jpg");
+                imgArr.push("../image/연예인사진/4.jpg");
+
+                //이미지 출력 버튼을 누르면 출력할 인덱스를 입력해주세요 한후
+                //그 인덱스(0~4)에 따른 이미지를 출력해주세요
+                //그이외의 번호를 누르면 해당이미지는 없습니다 라고 출력할것
+                var btn1=document.getElementById("btn1");
+                var rimg=document.getElementById("resultImg");
+
+                btn1.onclick=function(){
+
+                    var i=prompt("출력할 인덱스를 입력해주세요");
+
+                    if(i<0 || i>4){
+                        rimg.innerHTML="해당이미지는 없습니다";
+                    }else{
+                        rimg.innerHTML="<img src='"+imgArr[i]+"'>";
+                    }
+                }
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="btn1">이미지 출력</button>
+    <hr>
+    <div id="resultImg">이미지가 출력되는 곳.....</div>
+</body>
+</html>

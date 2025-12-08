@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. 아래사진으로 이벤트_ 사진에 마우스 올리면 5번이미지로,
+        클릭시에는 10번이미지로,마우스 벗어나면 원래이미지로</h3>
+    <img src="../image/Food/1.jpg" width="200" id="img1">
+    <script>
+        var img1=document.getElementById("img1");
+
+        img1.onclick=function(){
+            img1.setAttribute("src","../image/Food/10.jpg");
+        }
+        img1.onmouseover=function(){
+            img1.setAttribute("src","../image/Food/5.jpg");
+        }
+        img1.onmouseout=function(){
+            img1.setAttribute("src","../image/Food/1.jpg");
+        }
+    </script>
+
+    <h3>연예인사진 1~20번까지 for문 반복해서 body에 출력하기_4줄로 출력할것!!!</h3>
+    <script>
+         for(var i=1;i<=20;i++){
+            var imgname="../image/연예인사진/"+i+".jpg";
+            var s="<img src='"+imgname+"' width='100'>";
+            document.write(s);
+
+            if(i%5==0)
+              document.write("<br>");
+         }
+    </script>
+
+    <h3>아래 이미지를 width=200 height=220 으로 지정후 이미지를 클릭하면 
+        아래 div에 각종 정보가 나오게 할것(src,width,height)</h3>
+    <img src="../image/jquery_img/06.png" alt="" width="200" height="220" id="img2">
+    <div id="out"></div>
+    <script>
+        var img2=document.getElementById("img2");
+        var result=document.getElementById("out");
+
+        img2.onclick=function(){
+            var width=img2.getAttribute("width");
+            var height=img2.getAttribute("height");
+            var src=img2.getAttribute("src");
+
+            var img2Info=width+"<br>"+height+"<br>"+src;
+            result.innerHTML=img2Info;
+        }
+    </script>
+</body>
+</html>

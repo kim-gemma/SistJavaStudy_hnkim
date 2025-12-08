@@ -1,0 +1,14 @@
+div.lotto{
+    border: 3px solid #f08080;
+    background-color: #ffb6c1;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20pt;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px gray;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <button type="button" id="add">+</button>
+    <script>
+        /*
+        ✅ [정적 이벤트 방식 - 주석 처리된 코드]
+        → 처음 로딩된 #add 버튼에는 클릭이 걸리지만
+        → 새로 추가된 버튼에는 이벤트가 적용되지 않음
+        */
+        // $("#add").click(function(){
+        //     $("body").append("<button id='add'>+</button>")
+        // });
+
+        /*
+        ✅ [동적 이벤트 방식 - on()]
+        → document에 이벤트를 위임해서
+        → 나중에 추가된 버튼도 클릭 가능하게 만듦
+        */
+
+        /*
+        ✅ on 메서드 구조 설명
+        1번 파라미터 → 이벤트 종류 ("click")
+        2번 파라미터 → 실제 클릭될 대상 ("button[id='add']")
+        3번 파라미터 → 실행할 함수
+        */
+
+        /*click() → 정적 이벤트 (이미 존재하는 요소만 가능)
+        on() → 동적 이벤트 (나중에 생긴 요소도 가능)
+        document에 이벤트를 위임해서 모든 id="add" 버튼을 감시*/
+
+        $(document).on("click","button[id='add']",function(){
+            $("body").append("<button id='add'>+</button>")
+        });
+    </script>
+    <hr>
+    <ul id="mylang">
+        <li>java</li>
+        <li>jsp</li>
+        <li>html</li>
+        <li>oracle</li>
+    </ul>
+    <script>
+   
+        
+        //정적이벤트
+        // $("#mylang").children().click(function(){
+        //     $(this).remove();
+        // })
+
+        //동정이벤트
+        $("#mylang").on("click","li",function(e){
+            //e.target → 실제 클릭한 li 요소
+            $(e.target).remove();
+        });
+
+        $("#mylang").append('<li>jquery</li>')
+    </script>
+
+    <hr>
+    <h3>미래에 생기는 요소에 생기는 이벤트 처리할 경우 on 사용</h3>
+    <div class="view"></div>
+    <button type="button" id="btn1">버튼1</button>
+    <script>
+        var b2=
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div>
+        <!-- 쇼핑몰사진 1~35.jpg 이미지 가져오기(23번 없음) 너비50 -->
+         <script>
+            for(var i=1;i<=35;i++){
+
+                var s="<img src='../image/쇼핑몰사진/"+i+".jpg' width='50' class='shop'>";
+                if(i==23) continue;
+                document.write(s);
+            }
+         </script>
+         <hr>
+         <img src="../image/logoImg/acc03.png" alt="" width="300" class="mainPhoto">
+    </div>
+
+   <script>
+    //1. 메인포토의 위치를 left 100 top 300 border:10px solid gray 
+    $(".mainPhoto").css({
+        position:"absolute",
+        left:"100px",
+        top:"300px",
+        border:"10px solid gray"
+    })
+
+
+    //2..shop에 마우스를 올리면 그 사진을 추출해서 메인포토의 사진으로 변경하기
+   $(".shop").mouseover(function(){
+        var curImag=$(this).attr("src");
+        $(".mainPhoto").attr("src",curImag);
+   })
+
+    //3.벗어나면 원래대로
+    $(".shop").mouseout(function(){
+
+         $(".mainPhoto").attr("src","../image/logoImg/acc03.png");
+    })
+    
+
+   </script>
+
+</body>
+</html>

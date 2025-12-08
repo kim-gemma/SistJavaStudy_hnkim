@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    <script>
+        // 버튼을 누르면 해당 연예인이 나오도록 합니다
+        //각각의 버튼을 클릭하면 매번 박보영님을 출력할까요? 
+        // 라고 확인해서 확인을 누를경우에만 이미지가나온다
+         
+        window.onload=function(){
+
+            var soo=document.getElementById("btnSoo");
+            var mina=document.getElementById("btnmin");
+            var resultimg=document.getElementById("result");
+
+            soo.onclick=function(){
+                var a=confirm("수지님을 출력할까요?");
+
+                if(a){
+                    resultimg.innerHTML="<img src='../image/연예인사진/19.jpg'>";
+                }
+            }
+
+            mina.onclick=function(){
+                var a=confirm("신민아님을 출력할까요?");
+
+                if(a){
+                    resultimg.innerHTML="<img src='../image/연예인사진/17.jpg'>";
+                }
+            }
+
+
+
+        }
+
+        function btnPark(){
+            
+           var a=confirm("박보영님을 출력할까요?");
+           if(a){
+
+            result.innerHTML="<img src='../image/연예인사진/12.jpg'>";
+           }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" class="btn1 btn-pink" onclick="btnPark()">박보영</button>
+    <button type="button" class="btn1 btn-green" id="btnSoo">수지</button>
+    <button type="button" class="btn1 btn-black" id="btnmin">신민아</button>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>
