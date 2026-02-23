@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "gemini.api.key",
+      "type": "java.lang.String",
+      "description": "Gemini API 키 (Google AI Studio에서 발급)"
+    }
+  ]
+}

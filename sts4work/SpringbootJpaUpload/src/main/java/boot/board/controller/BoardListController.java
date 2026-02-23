@@ -1,0 +1,30 @@
+package boot.board.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import boot.board.data.BoardDao;
+
+@Controller
+public class BoardListController {
+	@Autowired
+	BoardDao dao;
+	
+	@GetMapping("/")
+	public String home() {
+		return "redirect:board/list";
+	}
+
+	@GetMapping("/board/list")
+	public ModelAndView list()
+	{
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("boardlist");
+		return model;
+	}
+	
+	
+}
